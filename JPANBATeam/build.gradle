@@ -35,7 +35,7 @@ ext {
 
 // define project specific dependencies
 dependencies {
-	compile project(':NBACrud')
+
 
 	compile group: 'javax.servlet', name: 'jstl', version: '1.2'
 	compile group: 'javax.servlet.jsp', name: 'javax.servlet.jsp-api', version: '2.3.1'
