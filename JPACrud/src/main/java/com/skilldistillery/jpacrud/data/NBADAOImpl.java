@@ -8,7 +8,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
-import com.skilldistillery.jpacrud.entities.NBATeam;
+import com.skilldistillery.jpacrud.entities.Team;
 
 @Transactional
 @Service
@@ -18,14 +18,14 @@ public class NBADAOImpl implements NBADAO {
 	private EntityManager em;
 	
 	@Override
-	public NBATeam findByID(int id) {
-		return em.find(NBATeam.class, id);
+	public Team findByID(int id) {
+		return em.find(Team.class, id);
 	}
 
 	@Override
-	public List<NBATeam> findAll() {
+	public List<Team> findAll() {
 		String jpql = "Select n FROM Nbateam n ";
-		return em.createQuery(jpql, NBATeam.class).getResultList();
+		return em.createQuery(jpql, Team.class).getResultList();
 	}
 
 }

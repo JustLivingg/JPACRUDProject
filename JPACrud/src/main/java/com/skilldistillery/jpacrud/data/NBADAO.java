@@ -2,12 +2,12 @@ package com.skilldistillery.jpacrud.data;
 
 import java.util.List;
 
-import com.skilldistillery.jpacrud.entities.NBATeam;
+import com.skilldistillery.jpacrud.entities.Team;
 
 public interface NBADAO {
 
-	NBATeam findByID(int id);
+	Team findByID(int id);
 	
-	List<NBATeam> findAll();
+	List<Team> findAll();
 	
 }

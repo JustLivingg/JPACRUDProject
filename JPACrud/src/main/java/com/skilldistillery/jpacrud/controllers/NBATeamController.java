@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.skilldistillery.jpacrud.data.NBADAO;
-import com.skilldistillery.jpacrud.entities.NBATeam;
+import com.skilldistillery.jpacrud.entities.Team;
 
 @Controller
 public class NBATeamController {
@@ -18,15 +18,15 @@ public class NBATeamController {
 	
 	@RequestMapping(path = "/")
 	public String index(Model model) {
-		List<NBATeam> teamList = nbaDAO.findAll();
+		List<Team> teamList = nbaDAO.findAll();
 		model.addAttribute("teams", teamList);
 		return "index";
 		// return "index"; // if using a ViewResolver.
 	}
 
-	@RequestMapping(path = "getFilm.do")
+	@RequestMapping(path = "getTeam.do")
 	public String getFilm(Model model, Integer tid) {
-		NBATeam team = nbaDAO.findByID(tid);
+		Team team = nbaDAO.findByID(tid);
 		model.addAttribute("team", team);
 		return "nba/show";
 
