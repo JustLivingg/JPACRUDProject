@@ -9,7 +9,7 @@
     </provider>
     
  <!-- List Entities Here -->
-<class>com.skilldistillery.jpacrud.entities.NBATeam</class>
+<class>com.skilldistillery.jpacrud.entities.Nbateam</class>
 
 
     <properties>

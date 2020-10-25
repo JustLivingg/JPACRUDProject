@@ -6,8 +6,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>New Team</title>
+<title> Showing New Team</title>
 </head>
+
 <body>
 
 	<c:choose>
@@ -29,12 +30,14 @@
 	</c:choose>
 
 	<br>
-	<br>
-	<form action="deleteTeam.do" method="POST">
-		Please enter team ID of the team you would like to delete:<br> <input
-			class="input" type="number" required="required" name="tid"> <input
-			class="submit" type="submit" value="Delete" />
+	<form action="deleteTeam.do" method="GET">
+		<strong>Delete this team:</strong><br> 
+		<input type="radio" name="id" value="${newTeam.id}"/> 
+		<input type="submit" value="Delete" />
 	</form>
+	<br>
+
+
 	<br>
 
 </body>

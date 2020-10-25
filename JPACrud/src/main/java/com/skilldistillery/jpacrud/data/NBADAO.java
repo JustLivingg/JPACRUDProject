@@ -12,7 +12,7 @@ public interface NBADAO {
 	
 	public Nbateam update(int id, Nbateam team);
 	
-	public boolean destroy(int id);
+	public boolean deleteTeam(int id);
 	
 	List<Nbateam> findAll();
 	

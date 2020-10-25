@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Team added!</title>
 </head>
+
 <body>
 
 <h3>${result}</h3>

@@ -15,13 +15,12 @@ import com.skilldistillery.jpacrud.entities.Nbateam;
 @Transactional
 @Service
 public class NBADAOImpl implements NBADAO {
-	
-	private static EntityManagerFactory emf = 
-			Persistence.createEntityManagerFactory("NBAPU");
+
+	private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("NBAPU");
 
 	@PersistenceContext
 	private EntityManager em;
-	
+
 	@Override
 	public Nbateam findByID(int id) {
 		return em.find(Nbateam.class, id);
@@ -39,12 +38,11 @@ public class NBADAOImpl implements NBADAO {
 
 		em.getTransaction().begin();
 		// write the customer to the database
-		
+
 		System.out.println("Team Before:  " + team);
 		em.persist(team);
 		System.out.println("Team After: " + team);
-		
-		
+
 		// update the "local" Customer object
 		em.flush();
 		// commit the changes (actually perform the operation)
@@ -56,14 +54,14 @@ public class NBADAOImpl implements NBADAO {
 
 	@Override
 	public Nbateam update(int id, Nbateam team) {
-		
-		//Find the actor to be updated
+
+		// Find the actor to be updated
 		Nbateam dbTeam = em.find(Nbateam.class, id);
-		
-		//Start your transaction
-		em.getTransaction().begin();
-		
-		//Assign all the data from the sent in Actor object to the one in the database
+
+		// Start your transaction
+//		em.getTransaction().begin();
+
+		// Assign all the data from the sent in Actor object to the one in the database
 		dbTeam.setName(team.getName());
 		dbTeam.setCity(team.getCity());
 		dbTeam.setChampionships(team.getChampionships());
@@ -72,31 +70,30 @@ public class NBADAOImpl implements NBADAO {
 		dbTeam.setYearFounded(team.getYearFounded());
 		dbTeam.setTeamGoat(team.getTeamGoat());
 
-		
-		em.flush();
-		
-		//Always commit transactions or it will automatically rollback;
-		em.getTransaction().commit();
-		
-		em.close();
+//		em.flush();
+
+		// Always commit transactions or it will automatically rollback;
+//		em.getTransaction().commit();
+
+//		em.close();
 		return dbTeam;
 	}
 
 	@Override
-	public boolean destroy(int id) {
-		
+	public boolean deleteTeam(int id) {
+
 		Nbateam teamDelete = em.find(Nbateam.class, id);
-		em.getTransaction().begin();
-		
+//		em.getTransaction().begin();
+
 		em.remove(teamDelete);
-		
+
 		boolean teamWasDeleted = !em.contains(teamDelete);
-		
-		em.flush();
-		
-		em.getTransaction().commit();
-		
-		em.close();
+
+//		em.flush();
+//
+//		em.getTransaction().commit();
+
+//		em.close();
 		return teamWasDeleted;
 	}
 

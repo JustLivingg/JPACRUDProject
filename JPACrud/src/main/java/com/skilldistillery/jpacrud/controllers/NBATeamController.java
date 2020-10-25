@@ -7,17 +7,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.jpacrud.data.NBADAO;
 import com.skilldistillery.jpacrud.entities.Nbateam;
 
 @Controller
 public class NBATeamController {
-	
+
 	@Autowired
 	private NBADAO nbaDAO;
-	
+
 	@RequestMapping(path = "/")
 	public String index(Model model) {
 		List<Nbateam> teamList = nbaDAO.findAll();
@@ -33,28 +32,42 @@ public class NBATeamController {
 		return "nba/show";
 
 	}
-	
-	@RequestMapping(path = "createTeam.do", method = RequestMethod.GET)
-	public String createPlayerForm(Nbateam team) {
+
+	@RequestMapping(path = "createTeamForm.do", method = RequestMethod.GET)
+	public String createTeamForm(Nbateam team) {
 
 		return "nba/newTeam";
 	}
-	
-	@RequestMapping(path = "createPlayer.do", method = RequestMethod.POST)
-	public String createPLayer(Nbateam team, Model model) {
+
+	@RequestMapping(path = "createTeam.do", method = RequestMethod.POST)
+	public String createTeam(Nbateam team, Model model) {
 		model.addAttribute("newTeam", nbaDAO.create(team));
 		return "nba/showNewTeam";
 	}
-	
-	@RequestMapping(path = "deleteTeam.do", method = RequestMethod.GET)
-	public String deletePlayer(@RequestParam("tid") int tid, Model model) {
-		if (nbaDAO.destroy(tid)) {
+
+	@RequestMapping(path = "deleteTeam.do")
+	public String deleteTeam(int id, Model model) {
+		if (nbaDAO.deleteTeam(id)) {
 			model.addAttribute("result", "Team Deleted!");
 		}
 
 		else {
 			model.addAttribute("result", "Team Not Found!");
 		}
+		return "nba/show";
+	}
+
+	@RequestMapping(path = "updateTeamForm.do", method = RequestMethod.GET)
+	public String updateTeamForm(Nbateam team, Integer id, Model model) {
+		model.addAttribute("team", nbaDAO.findByID(id));
+		return "nba/updateTeam";
+	}
+
+	@RequestMapping(path = "updateTeam.do", method = RequestMethod.POST)
+	private String updatePlayer(Integer id, Model model, Nbateam team) {
+		nbaDAO.update(id, team);
+		model.addAttribute("team", team);
+
 		return "nba/show";
 	}
 
