@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Team {
+public class Nbateam {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,7 +31,7 @@ public class Team {
 	@Column(name = "team_goat")
 	private String teamGoat;
 
-	public Team(String name, String city, int championships, String coach, String conference,
+	public Nbateam(String name, String city, int championships, String coach, String conference,
 			LocalDateTime yearFounded, String teamGoat) {
 		super();
 		this.name = name;
@@ -43,7 +43,7 @@ public class Team {
 		this.teamGoat = teamGoat;
 	}
 
-	public Team() {
+	public Nbateam() {
 		super();
 	}
 

@@ -18,7 +18,7 @@ import org.junit.jupiter.api.Test;
 class NBATest {
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private Team team;
+	private Nbateam team;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -33,7 +33,7 @@ class NBATest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		team = em.find(Team.class, 1);
+		team = em.find(Nbateam.class, 1);
 	}
 
 	@AfterEach

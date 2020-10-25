@@ -4,7 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import com.skilldistillery.jpacrud.entities.Team;
+import com.skilldistillery.jpacrud.entities.Nbateam;
 
 public class NBATeamDAOImpl implements NBATeamDAO {
 	
@@ -12,7 +12,7 @@ public class NBATeamDAOImpl implements NBATeamDAO {
 			Persistence.createEntityManagerFactory("NBAPU");
 
 	@Override
-	public Team create(Team team) {
+	public Nbateam create(Nbateam team) {
 		EntityManager em = emf.createEntityManager();
 
 		em.getTransaction().begin();
@@ -33,11 +33,11 @@ public class NBATeamDAOImpl implements NBATeamDAO {
 	}
 
 	@Override
-	public Team update(int id, Team team) {
+	public Nbateam update(int id, Nbateam team) {
 	EntityManager em = emf.createEntityManager();
 		
 		//Find the actor to be updated
-		Team dbTeam = em.find(Team.class, id);
+		Nbateam dbTeam = em.find(Nbateam.class, id);
 		
 		//Start your transaction
 		em.getTransaction().begin();
@@ -59,7 +59,7 @@ public class NBATeamDAOImpl implements NBATeamDAO {
 	public boolean destroy(int id) {
 	EntityManager em = emf.createEntityManager();
 		
-		Team teamDelete = em.find(Team.class, id);
+		Nbateam teamDelete = em.find(Nbateam.class, id);
 		em.getTransaction().begin();
 		
 		em.remove(teamDelete);

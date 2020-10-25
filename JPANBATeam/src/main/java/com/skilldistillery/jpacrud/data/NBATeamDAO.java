@@ -1,11 +1,11 @@
 package com.skilldistillery.jpacrud.data;
 
-import com.skilldistillery.jpacrud.entities.Team;
+import com.skilldistillery.jpacrud.entities.Nbateam;
 
 public interface NBATeamDAO {
 
-	public Team create(Team team);
-	public Team update(int id, Team team);
+	public Nbateam create(Nbateam team);
+	public Nbateam update(int id, Nbateam team);
 	public boolean destroy(int id);
 	
 }
