@@ -25,9 +25,18 @@
 			</ul>
 		</c:when>
 		<c:otherwise>
-		<p>No team found with that ID.</p>
+		<p>No team found with that Id.</p>
 		</c:otherwise>
 	</c:choose>
+	
+		<br>
+	<form action="deleteTeam.do" method="POST">
+		Please enter team ID of the team you would like to delete:<br> <input
+			class="input" type="number" required="required" name="tid"> <input
+			class="submit" type="submit" value="Delete" />
+	</form>
+	<br>
+	
 
 </body>
 </html>

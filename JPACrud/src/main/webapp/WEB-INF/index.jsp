@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>NBA TEAM MAKER</title>
 </head>
 <body>
 
@@ -14,7 +14,7 @@
 
 	<h3>Search by Team Id</h3>
 	<form action="getTeam.do" method="GET">
-		Film ID: <input type="text" name="tid" /> <input type="submit"
+		Team Id: <input type="text" name="tid" /> <input type="submit"
 			value="Show Team" />
 	</form>
 

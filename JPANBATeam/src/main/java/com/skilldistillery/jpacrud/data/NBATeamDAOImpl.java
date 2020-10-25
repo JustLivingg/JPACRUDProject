@@ -45,6 +45,12 @@ public class NBATeamDAOImpl implements NBATeamDAO {
 		//Assign all the data from the sent in Actor object to the one in the database
 		dbTeam.setName(team.getName());
 		dbTeam.setCity(team.getCity());
+		dbTeam.setChampionships(team.getChampionships());
+		dbTeam.setCoach(team.getCoach());
+		dbTeam.setConference(team.getConference());
+		dbTeam.setYearFounded(team.getYearFounded());
+		dbTeam.setTeamGoat(team.getTeamGoat());
+
 		
 		em.flush();
 		

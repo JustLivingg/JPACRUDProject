@@ -8,6 +8,12 @@ public interface NBADAO {
 
 	Nbateam findByID(int id);
 	
+	public Nbateam create(Nbateam team);
+	
+	public Nbateam update(int id, Nbateam team);
+	
+	public boolean destroy(int id);
+	
 	List<Nbateam> findAll();
 	
 }
