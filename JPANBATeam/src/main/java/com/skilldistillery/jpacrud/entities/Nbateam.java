@@ -26,13 +26,13 @@ public class Nbateam {
 	private String conference;
 
 	@Column(name = "year_inserted")
-	private LocalDateTime yearFounded;
+	private int yearFounded;
 
 	@Column(name = "team_goat")
 	private String teamGoat;
 
 	public Nbateam(String name, String city, int championships, String coach, String conference,
-			LocalDateTime yearFounded, String teamGoat) {
+			int yearFounded, String teamGoat) {
 		super();
 		this.name = name;
 		this.city = city;
@@ -95,11 +95,11 @@ public class Nbateam {
 		this.conference = conference;
 	}
 
-	public LocalDateTime getYearFounded() {
+	public int getYearFounded() {
 		return yearFounded;
 	}
 
-	public void setYearFounded(LocalDateTime yearFounded) {
+	public void setYearFounded(int yearFounded) {
 		this.yearFounded = yearFounded;
 	}
 

@@ -1,9 +1,6 @@
-package com.skilldistillery.jpacrud.entities;
+package com.skilldistillery.jpacrud;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
-import java.time.LocalDateTime;
+import static org.junit.jupiter.api.Assertions.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -15,7 +12,9 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class NBATest {
+import com.skilldistillery.jpacrud.entities.Nbateam;
+
+class NbaTest {
 	private static EntityManagerFactory emf;
 	private EntityManager em;
 	private Nbateam team;
@@ -33,7 +32,7 @@ class NBATest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		team = em.find(Nbateam.class, 1);
+		team = em.find(Nbateam.class, 33);
 	}
 
 	@AfterEach
@@ -45,12 +44,12 @@ class NBATest {
 	@Test
 	void test_nba_team() {
 		assertNotNull(team);
-		assertEquals("Lakers", team.getName());
-		assertEquals("Los Angeles", team.getCity());
-		assertEquals(17, team.getChampionships());
+		assertEquals("Supersonics", team.getName());
+		assertEquals("Seattle", team.getCity());
+		assertEquals(0, team.getChampionships());
 		assertEquals("Western", team.getConference());
-		assertEquals(1946, team.getYearFounded());
-		assertEquals("Kobe Bryant", team.getTeamGoat());
+		assertEquals(2020, team.getYearFounded());
+		assertEquals("Luke Eala", team.getTeamGoat());
 	}
 
 }

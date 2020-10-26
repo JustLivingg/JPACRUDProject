@@ -6,10 +6,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title> Showing New Team</title>
+<title>Showing New Team</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+	crossorigin="anonymous">
 </head>
 
 <body>
+
+	<h3>New Team Info:</h3>
 
 	<c:choose>
 		<c:when test="${! empty newTeam}">
@@ -29,13 +35,24 @@
 		</c:otherwise>
 	</c:choose>
 
-	<br>
-	<form action="deleteTeam.do" method="GET">
-		<strong>Delete this team:</strong><br> 
-		<input type="radio" name="id" value="${newTeam.id}"/> 
-		<input type="submit" value="Delete" />
+	<h2>Search by Team Id</h2>
+	<form action="getTeam.do" method="GET">
+		Team Id: <input type="text" name="tid" /> <input type="submit"
+			value="Show Team" />
 	</form>
 	<br>
+	<br>
+	<form action="deleteTeam.do" method="GET">
+		<strong>Delete this team:</strong><br> <input type="radio"
+			name="id" value="${newTeam.id}" /> <input type="submit"
+			value="Delete" />
+	</form>
+
+	<br>
+	<form action="updateTeamForm.do" method="GET">
+		<strong>Update this team:</strong><br> <input type="radio"
+			name="id" value="${team.id}" /> <input type="submit" value="Update" />
+	</form>
 
 
 	<br>

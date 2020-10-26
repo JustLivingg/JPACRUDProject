@@ -7,6 +7,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Show Team</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+	crossorigin="anonymous">
 </head>
 
 <body>
@@ -31,6 +35,11 @@
 		</c:otherwise>
 	</c:choose> 
 	
+		<h2>Search by Team Id</h2>
+		<form action="getTeam.do" method="GET">
+			Team Id: <input type="text" name="tid" /> <input type="submit"
+				value="Show Team" />
+		</form>
 		<br>
 	<form action="deleteTeam.do" method="GET">
 		<strong>Delete this team:</strong><br> 
@@ -47,7 +56,6 @@
 	
 
 
-	
 
 </body>
 </html>
