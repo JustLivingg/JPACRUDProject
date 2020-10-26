@@ -54,7 +54,9 @@
 	</form>
 	<br>
 	
-
+	<form action="/">
+			<button type="submit">Return to Home Page</button>
+		</form>
 
 
 </body>

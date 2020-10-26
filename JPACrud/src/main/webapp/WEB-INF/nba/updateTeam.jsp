@@ -54,7 +54,11 @@
 		<input type='hidden' name='id' id="id" value='${team.id}' />
 		<button type="submit">Submit</button>
 
-
 	</form:form>
+	
+		<form action="/">
+			<button type="submit">Return to Home Page</button>
+		</form>
+	
 </body>
 </html>

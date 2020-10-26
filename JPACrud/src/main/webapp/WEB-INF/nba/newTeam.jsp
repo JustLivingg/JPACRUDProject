@@ -54,8 +54,11 @@
 
 		<button type="submit">Submit</button>
 
+</form:form>
 
+	<form action="/">
+			<button type="submit">Return to Home Page</button>
+		</form>
 
-	</form:form>
 </body>
 </html>

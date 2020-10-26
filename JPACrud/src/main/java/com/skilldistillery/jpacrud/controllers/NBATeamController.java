@@ -19,8 +19,6 @@ public class NBATeamController {
 
 	@RequestMapping(path = "/")
 	public String index(Model model) {
-		List<Nbateam> teamList = nbaDAO.findAll();
-		model.addAttribute("teams", teamList);
 		return "index";
 		// return "index"; // if using a ViewResolver.
 	}
@@ -32,6 +30,8 @@ public class NBATeamController {
 		return "nba/show";
 
 	}
+	
+	
 
 	@RequestMapping(path = "createTeamForm.do", method = RequestMethod.GET)
 	public String createTeamForm(Nbateam team) {
